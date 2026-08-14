@@ -71,7 +71,7 @@ const Navbar = () => {
       >
         {/* Home */}
         <a
-          href="#home"
+          href="/"
           onClick={handleMenuClick}
           className="
             no-underline
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* About */}
         <a
-          href="#about"
+          href="/about"
           onClick={handleMenuClick}
           className="
             no-underline
@@ -106,12 +106,12 @@ const Navbar = () => {
             max-[768px]:text-white
           "
         >
-          About Me
+          About
         </a>
 
-        {/* Contact */}
+        {/* Projects */}
         <a
-          href="#contact"
+          href="/projects"
           onClick={handleMenuClick}
           className="
             no-underline
@@ -126,12 +126,32 @@ const Navbar = () => {
             max-[768px]:text-white
           "
         >
-          Contact
+          Projects
+        </a>
+
+        {/* Blogs */}
+        <a
+          href="/blog"
+          onClick={handleMenuClick}
+          className="
+            no-underline
+            text-black
+            cursor-pointer
+            transition-colors
+            duration-300
+            hover:text-[#c305f8]
+
+            max-[768px]:w-full
+            max-[768px]:py-[10px]
+            max-[768px]:text-white
+          "
+        >
+          Blogs
         </a>
 
         {/* Mobile Connect */}
         <a
-          href="#contact"
+          href="/contact"
           onClick={handleMenuClick}
           className="
             hidden
@@ -160,7 +180,7 @@ const Navbar = () => {
 
       {/* Desktop Connect */}
       <a
-        href="#contact"
+        href="/contact"
         className="
           block
           px-8 py-4
