@@ -1,9 +1,15 @@
+import Hero from '../components/Home/Hero';
+import StatsBar from '../components/Home/StatsBar';
+import OverviewCards from '../components/Home/OverviewCards';
+import Timeline from '../components/Home/Timeline';
 
-
-const Home = () => {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <main className="flex flex-col items-center gap-10 sm:gap-14 md:gap-20 w-full max-w-7xl mx-auto py-4">
+      <Hero />
+      <StatsBar />
+      <OverviewCards />
+      <Timeline />
+    </main>
+  );
 }
-
-export default Home
