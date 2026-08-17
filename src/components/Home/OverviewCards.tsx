@@ -1,4 +1,5 @@
 import { User, Code2, BookOpen } from 'lucide-react';
+import { useInView } from '../../hooks/useInView';
 
 const cards = [
   {
@@ -25,8 +26,13 @@ const cards = [
 ];
 
 export default function OverviewCards() {
+  const { ref, isInView } = useInView();
+
   return (
-    <section className="w-full flex justify-center px-4 sm:px-5">
+    <section
+      ref={ref}
+      className={`w-full flex justify-center px-4 sm:px-5 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-5xl">
         {cards.map((card, index) => (
           <div

@@ -1,4 +1,5 @@
 import { GraduationCap, Briefcase, Code, Award } from 'lucide-react';
+import { useInView } from '../../hooks/useInView';
 
 const timelineItems = [
   {
@@ -36,8 +37,13 @@ const timelineItems = [
 ];
 
 export default function Timeline() {
+  const { ref, isInView } = useInView();
+
   return (
-    <section className="w-full flex justify-center px-4 sm:px-5">
+    <section
+      ref={ref}
+      className={`w-full flex justify-center px-4 sm:px-5 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="w-full max-w-3xl">
         <h2 className="text-center text-2xl sm:text-3xl font-semibold text-white mb-8 sm:mb-10">
           Currently

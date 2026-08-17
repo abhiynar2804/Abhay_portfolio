@@ -1,4 +1,8 @@
+import { useInView } from '../../hooks/useInView';
+
 export default function StatsBar() {
+  const { ref, isInView } = useInView();
+
   const stats = [
     { value: "220+", label: "LeetCode" },
     { value: "10+", label: "Projects" },
@@ -6,7 +10,10 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="w-full flex justify-center px-4 sm:px-5">
+    <section
+      ref={ref}
+      className={`w-full flex justify-center px-4 sm:px-5 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="flex items-center gap-6 sm:gap-10 md:gap-16 bg-neutral-900/60 border border-neutral-800 rounded-2xl px-6 sm:px-10 py-5 sm:py-6">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center text-center">
