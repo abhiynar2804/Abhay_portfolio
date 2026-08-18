@@ -8,6 +8,8 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 
+import ProjectDetail from './pages/ProjectDetail';
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:projectId" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
         </Route>
