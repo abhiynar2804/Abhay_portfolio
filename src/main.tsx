@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import 'highlight.js/styles/github-dark.css'; // or atom-one-dark.css
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
