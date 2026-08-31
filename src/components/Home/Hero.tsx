@@ -44,11 +44,8 @@ export default function Hero() {
       </div>
 
       {/* Description */}
-      <p className="w-full sm:w-[85%] lg:w-[55%] text-center text-sm sm:text-lg md:text-[21px] leading-5 sm:leading-6 md:leading-[27px] text-neutral-300">
-        B.Tech Computer Science student passionate about building scalable web
-        applications. Currently developing a Placement & Internship Management
-        Platform while strengthening Data Structures & Algorithms for software
-        engineering roles.
+      <p className="w-full sm:w-[85%] lg:w-[65%] text-center text-sm sm:text-lg md:text-[21px] leading-5 sm:leading-6 md:leading-[27px] text-neutral-300">
+        Computer Science Engineer passionate about building scalable, user-focused web applications. I build with modern technologies like Next.js, React, TypeScript, and PostgreSQL, while strengthening my problem-solving skills through Data Structures & Algorithms. Currently building real-world products and preparing for software engineering opportunities.
       </p>
 
       {/* Action Buttons */}

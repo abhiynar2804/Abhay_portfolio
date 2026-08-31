@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           src={project.image}
           alt={`${project.title} screenshot`}
           loading="lazy"
-          className="aspect-video w-full object-cover"
+          className="aspect-video w-full object-fill"
         />
       ) : (
         <div className="flex aspect-video w-full items-center justify-center bg-[linear-gradient(270deg,#df8908_10%,#b415ff_100%)] text-5xl font-bold text-white/90">

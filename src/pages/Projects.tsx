@@ -6,7 +6,7 @@ export default function Projects() {
   const { ref, isInView } = useInView();
 
   const personalProjects = projects.filter((p) => p.category === 'personal');
-  const hackathonProjects = projects.filter((p) => p.category === 'hackathon');
+  //const hackathonProjects = projects.filter((p) => p.category === 'hackathon');
 
   return (
     <main
@@ -41,7 +41,7 @@ export default function Projects() {
       </section>
 
       {/* Hackathon / team projects */}
-      <section>
+      {/* <section>
         <h2 className="text-3xl mb-10 md:text-4xl font-extrabold text-white tracking-tight relative inline-block">
           Hackathon / Team Projects
           <span className="absolute -bottom-2 left-0 w-12 h-[3px] bg-gradient-to-r from-[#da7c25] to-[#b923e1] rounded-full" />
@@ -51,7 +51,7 @@ export default function Projects() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

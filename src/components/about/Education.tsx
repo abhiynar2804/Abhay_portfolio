@@ -28,7 +28,7 @@ export default function Education() {
             <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-500">
               <span className="flex items-center gap-1.5">
                 <MapPin size={14} />
-                Your College Name
+                GH Raisoni College of Engineering, Jalgaon
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar size={14} />

@@ -7,7 +7,7 @@ export default function AboutHero() {
   return (
     <section
       ref={ref}
-      className={`pt-20 pb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`pt-10 pb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
         {/* Left Side: Text Content */}

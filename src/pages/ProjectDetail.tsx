@@ -6,7 +6,7 @@ import {
   SiGithub, SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiHtml5, 
   SiNodedotjs, SiExpress, SiAuth0, SiJsonwebtokens, SiMongodb, SiPostgresql, 
   SiNeon, SiMysql, SiPrisma, SiJavascript, SiCplusplus, SiOpenjdk, 
-  SiGit, SiPostman, SiFigma 
+  SiGit, SiPostman, SiFigma, SiVercel 
 } from 'react-icons/si';
 
 // Map tech stack names to their respective icons and brand colors
@@ -30,8 +30,10 @@ const techIconMap: Record<string, React.ReactNode> = {
   'Java': <SiOpenjdk className="text-[#ED8B00]" />,
   'C++': <SiCplusplus className="text-[#00599C]" />,
   'Auth0': <SiAuth0 className="text-[#da7c25]" />,
+  'NextAuth': <SiAuth0 className="text-white" />,
   'JWT': <SiJsonwebtokens className="text-white" />,
   'Postman': <SiPostman className="text-[#FF6C37]" />,
+  'Vercel': <SiVercel className="text-white" />,
 };
 
 // Fallback icon if a tech name isn't explicitly mapped
@@ -124,12 +126,38 @@ export default function ProjectDetail() {
           <img
             src={project.image}
             alt={`${project.title} screenshot`}
-            className="w-full object-cover max-h-[450px]"
+            className="w-full object-fill max-h-[450px]"
           />
         </div>
       ) : (
         <div className="mb-10 flex aspect-video w-full items-center justify-center rounded-2xl bg-[linear-gradient(270deg,#df8908_10%,#b415ff_100%)] text-7xl font-extrabold text-white/90 shadow-2xl">
           {project.title.charAt(0)}
+        </div>
+      )}
+
+      {/* Action Buttons */}
+      {(project.liveUrl || project.githubUrl) && (
+        <div className="mt-10 flex flex-col pb-10 sm:flex-row gap-4">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#da7c25] to-[#b923e1] px-8 py-3.5 text-center font-medium text-white shadow-lg shadow-[#b923e1]/20 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            >
+              <ExternalLink size={18} /> Live Demo
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#121214] px-8 py-3.5 text-center font-medium text-white hover:border-[#b923e1]/50 hover:bg-white/[0.03] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg"
+            >
+              <SiGithub size={18} className="text-white" /> GitHub Repository
+            </a>
+          )}
         </div>
       )}
 
@@ -184,32 +212,6 @@ export default function ProjectDetail() {
       <DetailSection title="Challenges & What I Learned" icon={<Lightbulb size={20} />} delay={350}>
         <p className="leading-relaxed">{project.challenges}</p>
       </DetailSection>
-
-      {/* Action Buttons */}
-      {(project.liveUrl || project.githubUrl) && (
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#da7c25] to-[#b923e1] px-8 py-3.5 text-center font-medium text-white shadow-lg shadow-[#b923e1]/20 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-            >
-              <ExternalLink size={18} /> Live Demo
-            </a>
-          )}
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#121214] px-8 py-3.5 text-center font-medium text-white hover:border-[#b923e1]/50 hover:bg-white/[0.03] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg"
-            >
-              <SiGithub size={18} className="text-white" /> GitHub Repository
-            </a>
-          )}
-        </div>
-      )}
     </main>
   );
 }

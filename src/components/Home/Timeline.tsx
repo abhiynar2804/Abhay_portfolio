@@ -20,10 +20,10 @@ const timelineItems = [
   },
   {
     icon: Award,
-    title: '220+ LeetCode Problems Solved',
+    title: '250+ LeetCode Problems Solved',
     subtitle: 'Data Structures & Algorithms',
-    period: '2025',
-    status: 'Completed',
+    period: '2026',
+    status: 'Active',
     color: '#22c55e',
   },
   {
@@ -31,7 +31,7 @@ const timelineItems = [
     title: 'Open for Internship Opportunities',
     subtitle: 'Software Engineering Roles',
     period: '2026',
-    status: 'Active',
+    status: 'Available',
     color: '#b415ff',
   },
 ];

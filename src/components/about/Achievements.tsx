@@ -2,10 +2,10 @@ import { Code2, Terminal, Trophy, Briefcase, ChevronRight } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 
 const stats = [
-  { icon: <Code2 size={24} />, value: '220+', label: 'LeetCode Problems', desc: 'Consistent problem solving' },
-  { icon: <Terminal size={24} />, value: '280+', label: 'DSA Problems', desc: 'Data Structures & Algorithms' },
-  { icon: <Trophy size={24} />, value: '3+', label: 'Hackathons', desc: 'Built & shipped under pressure' },
-  { icon: <Briefcase size={24} />, value: '2', label: 'Internships', desc: 'Real-world engineering exp.' },
+  { icon: <Code2 size={24} />, value: '250+', label: 'LeetCode Problems', desc: 'Consistent problem solving' },
+  { icon: <Terminal size={24} />, value: '300+', label: 'DSA Problems', desc: 'Data Structures & Algorithms' },
+  { icon: <Trophy size={24} />, value: '4+', label: 'Hackathons', desc: 'Built & shipped under pressure' },
+  { icon: <Briefcase size={24} />, value: '1', label: 'Internships', desc: 'Real-world engineering exp.' },
 ];
 
 export default function Achievements() {

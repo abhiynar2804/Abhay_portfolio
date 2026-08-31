@@ -3,13 +3,13 @@
 // To add a new project, just add an object here. No UI changes needed.
 // ─────────────────────────────────────────────────────────────
 
-export type ProjectCategory = 'personal' | 'hackathon';
+export type ProjectCategory = "personal" | "hackathon";
 
 export interface Project {
-  slug: string;          // used in the URL: /projects/:slug
+  slug: string; // used in the URL: /projects/:slug
   title: string;
-  tagline: string;       // short description shown on the card
-  image?: string;        // e.g. '/images/fastjoin.png' (put it in public/) — a gradient placeholder is shown if missing
+  tagline: string; // short description shown on the card
+  image?: string; // e.g. '/images/fastjoin.png' (put it in public/) — a gradient placeholder is shown if missing
   techStack: string[];
   category: ProjectCategory;
 
@@ -18,164 +18,209 @@ export interface Project {
   problem: string;
   solution: string;
   features: string[];
-  role: string;          // your role (esp. for team/hackathon projects)
-  challenges: string;    // challenges & what you learned
+  role: string; // your role (esp. for team/hackathon projects)
+  challenges: string; // challenges & what you learned
 
-  liveUrl?: string;      // optional — button hidden if empty
-  githubUrl?: string;    // optional — button hidden if empty
+  liveUrl?: string; // optional — button hidden if empty
+  githubUrl?: string; // optional — button hidden if empty
 }
 
 export const projects: Project[] = [
   // ══ Personal projects ═════════════════════════════════════
 
   {
-    slug: 'fastjoin',
-    title: 'FastJoin',
-    tagline: 'A placement & internship management platform connecting students, recruiters and coordinators in one place.',
-    image: '/src/assets/Screenshot (56).png',
-    techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Tailwind CSS'],
-    category: 'personal',
-    overview:
-      'FastJoin is a full-stack placement and internship management platform that digitizes the entire campus hiring workflow — from posting opportunities and managing applications to tracking interview rounds and final offers.',
-    problem:
-      'Campus placement drives typically run on scattered spreadsheets, emails and WhatsApp groups. Students miss deadlines, coordinators manually filter eligible candidates, and recruiters have no single view of the pipeline.',
-    solution:
-      'FastJoin centralizes the workflow: recruiters post drives with eligibility criteria, eligible students are matched and notified automatically, and coordinators track every application through each round on a single dashboard.',
-    features: [
-      'Role-based dashboards for students, recruiters and placement coordinators',
-      'Automatic eligibility matching based on CGPA, branch and skills',
-      'Application tracking across rounds (aptitude → technical → HR → offer)',
-      'Real-time notifications for new drives, shortlists and deadlines',
-      'Analytics on placement statistics, package trends and company-wise data',
+    slug: "fastjoin",
+    title: "FastJoin",
+    tagline:
+      "A full-stack placement management platform that brings students, recruiters, and placement coordinators into a single workflow — from job creation and eligibility matching to application tracking and selection.",
+    image: "/src/assets/fastjoin.png",
+    liveUrl: "https://fastjoin.vercel.app/",
+    githubUrl: "https://github.com/abhiynar2804/fastjoin",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "NextAuth",
+      "Tailwind CSS",
+      "Vercel",
     ],
-    role: 'Solo project — designed the schema, built the REST API and the entire React frontend, and handled deployment.',
+    category: "personal",
+    overview:
+      "FastJoin is a full-stack placement and internship management platform designed to simplify the campus recruitment workflow. It provides dedicated experiences for students, recruiters, and placement administrators, allowing opportunities to be created, applications to be managed, and recruitment progress to be tracked from a centralized platform.",
+    problem:
+      "Campus recruitment is often managed across spreadsheets, emails, messaging groups, and disconnected tools. Students can miss opportunities and deadlines, while placement teams spend significant time manually checking eligibility and tracking applications. Recruiters also lack a centralized view of candidates throughout the hiring process.",
+    solution:
+      "FastJoin centralizes campus recruitment into one platform. Recruiters can create opportunities with eligibility criteria, students can discover and apply to relevant drives, and placement coordinators can manage candidates across multiple recruitment rounds from a centralized dashboard.",
+    features: [
+      "Role-based dashboards for students, recruiters, and placement administrators",
+      "Job and internship posting with eligibility requirements",
+      "Student job discovery, saving, and application tracking",
+      "Application management across multiple recruitment stages",
+      "Resume upload and secure resume access",
+      "Recruiter-side candidate and application management",
+      "Admin tools for managing users, jobs, and recruitment activity",
+      "Placement analytics and centralized recruitment data",
+    ],
+    role: "Solo project — designed the application architecture and database schema, developed the backend APIs and frontend, implemented authentication and role-based workflows, integrated PostgreSQL and Prisma, and handled deployment and production configuration.",
     challenges:
-      'The hardest part was modeling the multi-round application pipeline in PostgreSQL without duplicating state, and keeping eligibility filtering fast as the number of students grew. Learned a lot about database indexing, transaction handling, and structuring a large Express codebase.',
-    liveUrl: '', // TODO: add live URL
-    githubUrl: 'https://github.com/yourusername/fastjoin', // TODO: update
+      "Designing a reliable application workflow across multiple recruitment stages was the biggest challenge. I had to model application state carefully, avoid inconsistent transitions, and keep the workflow efficient as the number of candidates increased. This project strengthened my understanding of relational database design, API architecture, authentication, role-based access control, and production deployment.",
   },
 
   {
-    slug: 'expense-tracker',
-    title: 'Expense Tracker',
-    tagline: 'A clean, fast expense tracker with categories, monthly budgets and spending insights — all stored locally.',
-    image: '/src/assets/Screenshot (56).png',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'LocalStorage'],
-    category: 'personal',
-    overview:
-      'A personal finance app to log daily expenses, set monthly budgets per category and visualize where the money goes — no sign-up needed, everything persists in the browser.',
-    problem:
-      'Most expense apps require accounts and sync to a server, which is overkill for quickly tracking daily spending. I wanted something instant, private and offline-friendly.',
-    solution:
-      'A lightweight React app that stores all data in LocalStorage, with instant add/edit/delete of transactions and charts that update in real time as you log expenses.',
-    features: [
-      'Add, edit and delete transactions with categories and notes',
-      'Monthly budget per category with progress indicators',
-      'Spending breakdown charts by category and day',
-      'Fully offline — data persists in LocalStorage',
-      'Responsive design for mobile and desktop',
+    slug: "active-paints",
+    title: "Active Paints",
+    tagline:
+      "A modern business website for Active Paints, showcasing its paint and coating solutions through a responsive, product-focused digital experience.",
+    image: "/src/assets/activepaints.png",
+    liveUrl: "https://active-paints.vercel.app/",
+    githubUrl: "https://github.com/abhiynar2804/active-paints-website",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
     ],
-    role: 'Solo project — UI design, state management and data persistence logic.',
+    category: "personal",
+    overview:
+      "Active Paints is a responsive business website built to establish a professional online presence for a paint and coatings company. The website presents the company's products, colour options, services, and brand information while providing clear paths for customers to request consultations and get in touch with the business.",
+    problem:
+      "The business needed a modern digital presence where customers could quickly understand its products, explore available solutions, learn about the company, and reach the team for enquiries. The challenge was presenting a broad product offering in a way that remained clear, responsive, and easy to navigate.",
+    solution:
+      "Built a responsive, product-focused website that organizes Active Paints offerings into clear categories and guides visitors from product discovery to enquiry. The interface combines structured content, visual product presentation, responsive layouts, and prominent consultation and contact actions to create a smoother customer experience.",
+    features: [
+      "Responsive design optimized for desktop and mobile",
+      "Product catalogue organized by paint and coating categories",
+      "Dedicated colour palette and product exploration",
+      "Product-focused landing sections with clear calls to action",
+      "Company information, experience, and customer statistics",
+      "Customer testimonials and trust-building sections",
+      "Consultation and quotation enquiry flows",
+      "Direct phone and WhatsApp contact integration",
+      "Animated UI elements and interactive content",
+      "Deployed and optimized for production with Vercel",
+    ],
+    role: "Designed and developed the website end-to-end, including the responsive UI, page structure, product presentation, navigation, animations, and contact experience. I translated the business requirements into a production-ready website and handled deployment and frontend optimization.",
     challenges:
-      'Designing a clean state model for transactions and budgets that stays in sync with LocalStorage without race conditions taught me a lot about useEffect discipline and derived state. Also practiced chart rendering without heavy libraries.',
-    liveUrl: '', // TODO: add live URL
-    githubUrl: 'https://github.com/yourusername/expense-tracker', // TODO: update
+      "The main challenge was balancing a large amount of business and product information with a clean, easy-to-navigate interface. Building the site strengthened my understanding of responsive design, component-based development, visual hierarchy, animation, and designing frontend experiences around real business requirements rather than purely technical requirements.",
   },
 
   {
-    slug: 'portfolio-website',
-    title: 'Portfolio Website',
-    tagline: 'This very site — a fully responsive personal portfolio built with React, TypeScript and Tailwind CSS.',
-    image: '/src/assets/Screenshot (56).png',
-    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router'],
-    category: 'personal',
+    slug: "expense-tracker",
+
+    title: "Expense Tracker",
+
+    tagline:
+      "A lightweight personal finance tracker for recording income and expenses, organizing transactions, and monitoring spending.",
+
+    image: "/src/assets/expence-tracker.png",
+
+    techStack: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+
+    category: "personal",
+
     overview:
-      'My personal portfolio showcasing my projects, skills, education and journey — built from scratch with a component-driven architecture and dynamic routing for project detail pages.',
+      "A browser-based expense tracking application designed to help users manage everyday finances in one place. Users can record income and expenses, organize transactions by category, monitor their balance, and review spending over time.",
+
     problem:
-      'A resume PDF alone can\'t show live projects, writing, or personality. I needed a central place that presents my work the way I want and is easy to extend as I build more.',
+      "Tracking daily spending across notes or spreadsheets makes it difficult to maintain a clear view of income, expenses, and overall balance. I wanted a simple interface where transactions could be recorded and reviewed without relying on external tools.",
+
     solution:
-      'A Vite + React + TypeScript single-page app with route-based pages, reusable section components, scroll-triggered animations via a custom useInView hook, and data-driven project pages.',
+      "Built a client-side expense management application with separate income and expense entries, category-based organization, financial summaries, transaction editing and deletion, and filters for categories and date ranges. Data is persisted in the browser using LocalStorage.",
+
     features: [
-      'Dynamic project detail routes driven by a single data file',
-      'Scroll-triggered reveal animations with a custom IntersectionObserver hook',
-      'Fully responsive layout from mobile to desktop',
-      'Component-driven structure for easy maintenance',
-      'Resume download and contact section',
+      "Income and expense tracking with transaction details",
+      "Automatic calculation of balance, total income, and total expenses",
+      "Category-based transaction organization",
+      "Edit and delete existing transactions",
+      "Filter transactions by category and date range",
+      "User login and signup interface",
+      "Responsive interface for different screen sizes",
+      "Persistent client-side data using LocalStorage",
     ],
-    role: 'Solo project — design, development and deployment.',
+
+    role: "Solo project — designed and developed the frontend, application logic, transaction management, filtering, and client-side data persistence.",
+
     challenges:
-      'Getting smooth scroll animations without jank taught me how IntersectionObserver works under the hood and when to unobserve elements. Structuring the project so new sections and projects require zero routing changes was a great exercise in data-driven UI.',
-    liveUrl: '', // TODO: add live URL
-    githubUrl: 'https://github.com/yourusername/portfolio', // TODO: update
+      "Managing transaction state and keeping summaries synchronized with every add, edit, and delete operation was the main challenge. This project strengthened my understanding of JavaScript DOM manipulation, event-driven application logic, localStorage, data filtering, and building interactive interfaces without a framework.",
+
+    liveUrl: "https://dailly-expense-tracker.netlify.app/",
+
+    githubUrl: "https://github.com/abhiynar2804/Daily-Expense-Tracker",
   },
 
   // ══ Hackathon / team projects ═════════════════════════════
 
   {
-    slug: 'herizon',
-    title: 'Herizon',
-    tagline: 'A hackathon-built platform — describe what Herizon does in one line.',
-    image: '/images/herizon.png',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'], // TODO: confirm stack
-    category: 'hackathon',
+    slug: "herizon",
+    title: "Herizon",
+    tagline:
+      "A hackathon-built platform — describe what Herizon does in one line.",
+    image: "/images/herizon.png",
+    techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS"], // TODO: confirm stack
+    category: "hackathon",
     overview:
-      'Built in 24–48 hours at [hackathon name], Herizon is [what the project does and who it serves].', // TODO: fill in
-    problem:
-      '[The problem statement your team picked at the hackathon.]', // TODO: fill in
+      "Built in 24–48 hours at [hackathon name], Herizon is [what the project does and who it serves].", // TODO: fill in
+    problem: "[The problem statement your team picked at the hackathon.]", // TODO: fill in
     solution:
-      '[How your solution addressed it — the core idea and how you executed it under time pressure.]', // TODO: fill in
+      "[How your solution addressed it — the core idea and how you executed it under time pressure.]", // TODO: fill in
     features: [
-      'Key feature one', // TODO: fill in
-      'Key feature two',
-      'Key feature three',
+      "Key feature one", // TODO: fill in
+      "Key feature two",
+      "Key feature three",
     ],
-    role: 'Worked in a team of [N] — I was responsible for [frontend / API / integration / pitching].', // TODO: fill in
+    role: "Worked in a team of [N] — I was responsible for [frontend / API / integration / pitching].", // TODO: fill in
     challenges:
-      'The biggest challenge was scope control — deciding what to cut so we could ship a working demo before the deadline. Learned how to divide work in a team, merge code under pressure, and present a product to judges.',
-    liveUrl: '', // TODO: add live URL
-    githubUrl: 'https://github.com/yourusername/herizon', // TODO: update
+      "The biggest challenge was scope control — deciding what to cut so we could ship a working demo before the deadline. Learned how to divide work in a team, merge code under pressure, and present a product to judges.",
+    liveUrl: "", // TODO: add live URL
+    githubUrl: "https://github.com/yourusername/herizon", // TODO: update
   },
 
   {
-    slug: 'hackathon-project-2',
-    title: 'Hackathon Project 2', // TODO: rename (also update the slug)
-    tagline: 'One-line description of your second hackathon/team project.',
-    image: '/images/hackathon-project-2.png',
-    techStack: ['Next.js', 'PostgreSQL', 'Prisma'], // TODO: confirm stack
-    category: 'hackathon',
-    overview: 'What the project is, which hackathon it was built at, and who it serves.', // TODO: fill in
-    problem: 'The problem statement your team tackled.', // TODO: fill in
-    solution: 'Your approach and what you shipped by the deadline.', // TODO: fill in
+    slug: "hackathon-project-2",
+    title: "Hackathon Project 2", // TODO: rename (also update the slug)
+    tagline: "One-line description of your second hackathon/team project.",
+    image: "/images/hackathon-project-2.png",
+    techStack: ["Next.js", "PostgreSQL", "Prisma"], // TODO: confirm stack
+    category: "hackathon",
+    overview:
+      "What the project is, which hackathon it was built at, and who it serves.", // TODO: fill in
+    problem: "The problem statement your team tackled.", // TODO: fill in
+    solution: "Your approach and what you shipped by the deadline.", // TODO: fill in
     features: [
-      'Key feature one', // TODO: fill in
-      'Key feature two',
-      'Key feature three',
+      "Key feature one", // TODO: fill in
+      "Key feature two",
+      "Key feature three",
     ],
-    role: 'Your specific role in the team.', // TODO: fill in
-    challenges: 'What was hard about the hackathon and what you learned from it.', // TODO: fill in
-    liveUrl: '',
-    githubUrl: '', // TODO: update
+    role: "Your specific role in the team.", // TODO: fill in
+    challenges:
+      "What was hard about the hackathon and what you learned from it.", // TODO: fill in
+    liveUrl: "",
+    githubUrl: "", // TODO: update
   },
 
   {
-    slug: 'hackathon-project-3',
-    title: 'Hackathon Project 3', // TODO: rename (also update the slug)
-    tagline: 'One-line description of your third hackathon/team project.',
-    image: '/images/hackathon-project-3.png',
-    techStack: ['React', 'Firebase'], // TODO: confirm stack
-    category: 'hackathon',
-    overview: 'What the project is, which hackathon it was built at, and who it serves.', // TODO: fill in
-    problem: 'The problem statement your team tackled.', // TODO: fill in
-    solution: 'Your approach and what you shipped by the deadline.', // TODO: fill in
+    slug: "hackathon-project-3",
+    title: "Hackathon Project 3", // TODO: rename (also update the slug)
+    tagline: "One-line description of your third hackathon/team project.",
+    image: "/images/hackathon-project-3.png",
+    techStack: ["React", "Firebase"], // TODO: confirm stack
+    category: "hackathon",
+    overview:
+      "What the project is, which hackathon it was built at, and who it serves.", // TODO: fill in
+    problem: "The problem statement your team tackled.", // TODO: fill in
+    solution: "Your approach and what you shipped by the deadline.", // TODO: fill in
     features: [
-      'Key feature one', // TODO: fill in
-      'Key feature two',
-      'Key feature three',
+      "Key feature one", // TODO: fill in
+      "Key feature two",
+      "Key feature three",
     ],
-    role: 'Your specific role in the team.', // TODO: fill in
-    challenges: 'What was hard about the hackathon and what you learned from it.', // TODO: fill in
-    liveUrl: '',
-    githubUrl: '', // TODO: update
+    role: "Your specific role in the team.", // TODO: fill in
+    challenges:
+      "What was hard about the hackathon and what you learned from it.", // TODO: fill in
+    liveUrl: "",
+    githubUrl: "", // TODO: update
   },
 ];
 

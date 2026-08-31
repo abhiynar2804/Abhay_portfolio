@@ -19,7 +19,7 @@ const Navbar = () => {
         flex items-center justify-between
         w-full box-border
         px-[30px] py-[5px]
-        backdrop-blur-[45px]
+        backdrop-blur-[45px] max-[768px]:backdrop-blur-none
         relative
 
         max-[768px]:px-[15px]
@@ -60,7 +60,8 @@ const Navbar = () => {
           max-[768px]:gap-5
           max-[768px]:p-5
           max-[768px]:w-full
-          max-[768px]:bg-[#1a1a1a]
+          max-[768px]:bg-[#111111]
+          max-[768px]:backdrop-blur-none
           max-[768px]:rounded-none
           max-[768px]:z-[1000]
           max-[768px]:border-b
