@@ -2,6 +2,9 @@
 // Project data — single source of truth for the Projects section.
 // To add a new project, just add an object here. No UI changes needed.
 // ─────────────────────────────────────────────────────────────
+import fastjoinImage from "../assets/fastjoin.png";
+import activepaintsImage from "../assets/activepaints.png";
+import expenseTrackerImage from "../assets/expence-tracker.png";
 
 export type ProjectCategory = "personal" | "hackathon";
 
@@ -33,7 +36,7 @@ export const projects: Project[] = [
     title: "FastJoin",
     tagline:
       "A full-stack placement management platform that brings students, recruiters, and placement coordinators into a single workflow — from job creation and eligibility matching to application tracking and selection.",
-    image: "/src/assets/fastjoin.png",
+    image: fastjoinImage,
     liveUrl: "https://fastjoin.vercel.app/",
     githubUrl: "https://github.com/abhiynar2804/fastjoin",
     techStack: [
@@ -72,7 +75,7 @@ export const projects: Project[] = [
     title: "Active Paints",
     tagline:
       "A modern business website for Active Paints, showcasing its paint and coating solutions through a responsive, product-focused digital experience.",
-    image: "/src/assets/activepaints.png",
+    image: activepaintsImage,
     liveUrl: "https://active-paints.vercel.app/",
     githubUrl: "https://github.com/abhiynar2804/active-paints-website",
     techStack: [
@@ -114,7 +117,7 @@ export const projects: Project[] = [
     tagline:
       "A lightweight personal finance tracker for recording income and expenses, organizing transactions, and monitoring spending.",
 
-    image: "/src/assets/expence-tracker.png",
+    image: expenseTrackerImage,
 
     techStack: ["HTML", "CSS", "JavaScript", "LocalStorage"],
 
