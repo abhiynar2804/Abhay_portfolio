@@ -23,5 +23,16 @@ export const blogArticles: BlogArticle[] = [
     slug: 'fastjoin-v1-live',
     featured: true,
     tags: ['FastJoin', 'V1', 'Launch', 'Placement']
+  },
+  {
+    id: 'velozity-dashboard',
+    title: 'Velozity Dashboard',
+    description: 'Introducing the new Velozity Dashboard for enhanced analytics and reporting.',
+    category: 'Development',
+    date: '2026-09-12',
+    readTime: '5 min',
+    slug: 'velozity-dashboard',
+    featured: true,
+    tags: ['Velozity', 'Dashboard', 'Analytics', 'Reporting']
   }
 ];

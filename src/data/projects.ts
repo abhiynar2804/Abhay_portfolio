@@ -4,7 +4,9 @@
 // ─────────────────────────────────────────────────────────────
 import fastjoinImage from "../assets/fastjoin.png";
 import activepaintsImage from "../assets/activepaints.png";
+import velozityDashboardImage from "../assets/velozity-dashboard.png";
 import expenseTrackerImage from "../assets/expence-tracker.png";
+import herizonImage from "../assets/herizon.png";
 
 export type ProjectCategory = "personal" | "hackathon";
 
@@ -71,6 +73,51 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "herizon",
+    title: "Herizon",
+    tagline:
+      "A full-stack women’s health and wellness platform that combines menstrual cycle tracking, symptom awareness, personalized wellness guidance, partner sharing, educational resources, and AI-assisted health conversations in a single experience.",
+    image: herizonImage,
+    liveUrl: "YOUR_HERIZON_LIVE_URL",
+    githubUrl: "https://github.com/abhiynar2804/herizon",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "NextAuth",
+      "Tailwind CSS",
+      "Zod",
+      "Google Gemini",
+      "Vercel",
+    ],
+    category: "personal",
+    overview:
+      "Herizon is a full-stack women’s health and wellness platform developed as a final-year project. It provides users with tools for menstrual cycle tracking, symptom awareness, health profile management, educational resources, controlled partner sharing, and AI-assisted general wellness guidance. The platform is built around a privacy-focused architecture with protected APIs, user-specific health data, role-based access, and controlled sharing workflows.",
+    problem:
+      "Women’s health information and daily wellness tracking are often spread across different applications and disconnected experiences. Users may need separate tools for cycle tracking, symptom awareness, educational information, and sharing relevant updates with trusted partners. This can make it difficult to maintain a centralized view of personal wellness information while keeping sensitive health data private and under the user’s control.",
+    solution:
+      "Herizon brings these experiences together into a single platform. Users can maintain their health profile, track menstrual cycles, record and evaluate symptoms through a rule-based system, access educational resources, and receive general wellness guidance through an AI assistant. A controlled partner-sharing system allows users to explicitly choose what cycle-related information they want to share, while role-based access and protected APIs help keep personal health information isolated.",
+    features: [
+      "Personal health profile with essential health and cycle information",
+      "Menstrual cycle and period tracking with cycle history",
+      "Automatic calculation of next period, ovulation, fertile window, and cycle phase",
+      "Database-driven symptom checker with rule-based symptom evaluation",
+      "General wellness guidance and professional-care recommendations",
+      "AI-assisted conversational women’s health and wellness guidance using Google Gemini",
+      "Educational resource and wellness article library",
+      "Partner invitation and controlled cycle-information sharing",
+      "User-controlled partner access with connection management",
+      "Role-based experiences for users, partners, and administrators",
+      "Admin dashboard for managing users, symptoms, rules, and educational content",
+      "Audit logging and platform-level administrative workflows",
+    ],
+    role: "Solo project — designed the application architecture and database schema, developed the frontend and backend APIs, implemented authentication and role-based access control, built the cycle calculation and symptom rule engines, integrated PostgreSQL with Prisma, implemented partner-sharing workflows and Gemini AI integration, and handled production deployment and configuration.",
+    challenges:
+      "The biggest challenge was designing a health-focused platform that combined multiple workflows while maintaining clear data boundaries between users, partners, and administrators. I had to carefully model relational data, protect health-related APIs, implement controlled partner access, and build deterministic cycle and symptom logic instead of relying on AI for medical decisions. Integrating AI while keeping its role limited to general wellness guidance also strengthened my understanding of responsible AI integration, authentication, authorization, database design, API architecture, and production deployment.",
+  },
+
+  {
     slug: "active-paints",
     title: "Active Paints",
     tagline:
@@ -107,6 +154,54 @@ export const projects: Project[] = [
     role: "Designed and developed the website end-to-end, including the responsive UI, page structure, product presentation, navigation, animations, and contact experience. I translated the business requirements into a production-ready website and handled deployment and frontend optimization.",
     challenges:
       "The main challenge was balancing a large amount of business and product information with a clean, easy-to-navigate interface. Building the site strengthened my understanding of responsive design, component-based development, visual hierarchy, animation, and designing frontend experiences around real business requirements rather than purely technical requirements.",
+  },
+
+  {
+    slug: "velozity-dashboard",
+    title: "Velozity Dashboard",
+    tagline:
+      "A full-stack real-time project and task management platform with role-based workflows, secure API authorization, live activity feeds, notifications, and user presence.",
+    image: velozityDashboardImage,
+    liveUrl: "https://velozity-dashboard-gamma.vercel.app/",
+    githubUrl: "YOUR_GITHUB_URL",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Socket.IO",
+      "JWT",
+      "Vercel",
+      "Railway",
+    ],
+    category: "personal",
+    overview:
+      "Velozity Dashboard is a full-stack project and task management platform designed for teams to manage projects, tasks, activity, and notifications through role-specific dashboards. It provides dedicated workflows for Admins, Project Managers, and Developers, with secure backend authorization and real-time collaboration features.",
+    problem:
+      "Project and task management can become difficult to track when teams rely on disconnected tools and manual updates. Users need different levels of access depending on their responsibilities, while activity, task status changes, notifications, and team presence need to stay synchronized across the application.",
+    solution:
+      "Velozity Dashboard centralizes project and task management into a single role-based platform. Admins get a global view of the system, Project Managers manage their own projects and teams, and Developers focus on their assigned tasks. Socket.IO provides real-time activity, notifications, and presence, while PostgreSQL acts as the persistent source of truth.",
+    features: [
+      "Role-based dashboards for Admins, Project Managers, and Developers",
+      "Backend-enforced role-based access control and ownership validation",
+      "Project, client, and task management",
+      "Task status, priority, due-date, and filtering workflows",
+      "Persistent activity history for task status changes",
+      "Real-time role-filtered activity feeds using Socket.IO",
+      "Offline activity recovery from persisted database events",
+      "Real-time task assignment and review notifications",
+      "Live online user presence with multi-connection aggregation",
+      "Backend scheduled processing for overdue tasks",
+      "JWT authentication with access and refresh token rotation",
+      "HttpOnly refresh-token cookies and secure token storage",
+      "Seeded demo environment with realistic users, projects, tasks, activities, and notifications",
+      "Security-focused authentication, RBAC, Socket.IO, presence, and overdue-task tests",
+    ],
+    role: "Solo project — designed the application architecture and database schema, developed the backend APIs and frontend, implemented JWT authentication and role-based authorization, built the Socket.IO real-time architecture, implemented activity tracking, notifications, presence, and scheduled overdue-task processing, and handled database setup, testing, deployment, and production configuration.",
+    challenges:
+      "The biggest challenge was designing the real-time architecture while keeping activity and notifications secure across different user roles. I had to ensure that Developers could only receive events for their assigned tasks, Project Managers only received activity related to their projects, and Admins retained global visibility. Building persistent activity records alongside WebSocket delivery also required treating the database as the source of truth and supporting recovery after temporary disconnections. This project strengthened my understanding of full-stack architecture, API-level authorization, relational database design, WebSocket systems, authentication, background jobs, and production deployment.",
   },
 
   {
@@ -154,31 +249,6 @@ export const projects: Project[] = [
   },
 
   // ══ Hackathon / team projects ═════════════════════════════
-
-  {
-    slug: "herizon",
-    title: "Herizon",
-    tagline:
-      "A hackathon-built platform — describe what Herizon does in one line.",
-    image: "/images/herizon.png",
-    techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS"], // TODO: confirm stack
-    category: "hackathon",
-    overview:
-      "Built in 24–48 hours at [hackathon name], Herizon is [what the project does and who it serves].", // TODO: fill in
-    problem: "[The problem statement your team picked at the hackathon.]", // TODO: fill in
-    solution:
-      "[How your solution addressed it — the core idea and how you executed it under time pressure.]", // TODO: fill in
-    features: [
-      "Key feature one", // TODO: fill in
-      "Key feature two",
-      "Key feature three",
-    ],
-    role: "Worked in a team of [N] — I was responsible for [frontend / API / integration / pitching].", // TODO: fill in
-    challenges:
-      "The biggest challenge was scope control — deciding what to cut so we could ship a working demo before the deadline. Learned how to divide work in a team, merge code under pressure, and present a product to judges.",
-    liveUrl: "", // TODO: add live URL
-    githubUrl: "https://github.com/yourusername/herizon", // TODO: update
-  },
 
   {
     slug: "hackathon-project-2",
