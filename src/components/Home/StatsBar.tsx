@@ -4,7 +4,7 @@ export default function StatsBar() {
   const { ref, isInView } = useInView();
 
   const stats = [
-    { value: "250+", label: "LeetCode" },
+    { value: "270+", label: "LeetCode" },
     { value: "10+", label: "Projects" },
     { value: "2027", label: "Graduate" },
   ];

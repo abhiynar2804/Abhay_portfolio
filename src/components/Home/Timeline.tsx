@@ -4,8 +4,8 @@ import { useInView } from '../../hooks/useInView';
 const timelineItems = [
   {
     icon: Code,
-    title: 'Building Placement & Internship Platform',
-    subtitle: 'Full Stack Project',
+    title: 'Preparing for Placement and Internship',
+    subtitle: 'SDE, Full Stack, and Web Development Roles',
     period: '2026',
     status: 'In Progress',
     color: '#b415ff',
@@ -20,7 +20,7 @@ const timelineItems = [
   },
   {
     icon: Award,
-    title: '250+ LeetCode Problems Solved',
+    title: '270+ LeetCode Problems Solved',
     subtitle: 'Data Structures & Algorithms',
     period: '2026',
     status: 'Active',

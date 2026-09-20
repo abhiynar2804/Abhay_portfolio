@@ -25,7 +25,7 @@ export default function Resume() {
             <h2 className="text-2xl font-bold text-white mb-1">My Resume</h2>
             <p className="text-gray-400 text-sm">
               A detailed overview of my skills, experience, and education.<br />
-              Last updated: <strong className="text-white">August 2026</strong>
+              Last updated: <strong className="text-white">September 2026</strong>
             </p>
           </div>
         </div>
